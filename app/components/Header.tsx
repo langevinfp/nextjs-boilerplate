@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FaPhone } from "react-icons/fa";
 
 export default function Header() {
   const pathname = usePathname();
@@ -45,6 +46,18 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+
+        <a
+          href="tel:+19784223939"
+          className="flex items-center text-amber-900 hover:text-rose-800 transition-colors duration-300 group"
+        >
+          <span className="bg-amber-100 p-2 rounded-full mr-2 group-hover:bg-rose-100 transition-colors duration-300">
+            <FaPhone className="text-amber-900 group-hover:text-rose-800 transition-colors duration-300" />
+          </span>
+          <span className="text-sm font-mono tracking-[.1em] group-hover:font-semibold transition-all duration-300">
+            (978) 422-3939
+          </span>
+        </a>
       </div>
     </header>
   );

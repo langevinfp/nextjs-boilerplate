@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-stone-100 text-stone-700 py-12 mt-auto"
+      className="bg-stone-100 text-stone-700 py-12 mt-auto border-t-3 border-rose-900"
       style={{
         backgroundImage: `url("${patternDataUri}")`,
         backgroundRepeat: "repeat",

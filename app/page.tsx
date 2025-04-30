@@ -282,6 +282,29 @@ export default function Home() {
               Western species, utilizing reload locations throughout Canada and
               the Eastern US.
             </p>
+            {/* Meet the Team Link */}
+            <div className="mt-12">
+              <Link
+                href="/our-team"
+                className="inline-flex items-center text-lg font-medium text-rose-800 border-b-2 border-rose-800/50 hover:border-rose-800 transition-all duration-300 group"
+              >
+                Meet the Team
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
