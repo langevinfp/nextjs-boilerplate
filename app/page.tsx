@@ -1,103 +1,290 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const ImageCarousel = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = ["/main-1.png", "/main-2.png", "/main-3.png"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]); // Add images.length to dependency array
+
+  return (
+    <div className="relative w-full h-[550px] overflow-hidden">
+      {images.map((src, index) => (
+        <div
+          key={src}
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
+            index === currentImageIndex ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <Image
+            src={src}
+            alt={`Carousel image ${index + 1}`}
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            priority={index === 0}
+          />
+        </div>
+      ))}
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/30 z-10"></div>
+
+      {/* Text overlay - centered */}
+      <div className="absolute top-5/12 left-0 right-0 transform -translate-y-1/2 z-20 text-center px-4">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl max-w-5xl font-bold text-white mx-auto mb-8 text-shadow-2xl">
+          Connecting Quality Mills to Quality Customers
+        </h2>
+
+        {/* Contact button with simpler animation - centered */}
+        <Link href="/contact">
+          <button
+            className="
+              mt-6 px-8 py-4 bg-rose-700 text-white text-xl font-semibold rounded-lg
+              shadow-2xl hover:shadow-lg hover:bg-rose-800
+              transition-colors duration-200 cursor-pointer
+              focus:outline-none focus:ring-0
+            "
+          >
+            CONTACT US
+          </button>
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const lumberProducts = [
+    {
+      title: "Canadian SPF",
+      grade: "Various Dimensions",
+      description:
+        "Available in 2x4-2x12, 2x3-2x12, and 2x4-2x6 sizes. Ideal for general construction and framing.",
+    },
+    {
+      title: "Southern Yellow Pine (SYP)",
+      grade: "Various Grades & Dimensions",
+      description:
+        "Strong and dense pine available in 2x4-2x12 sizes across multiple grades for structural applications.",
+    },
+    {
+      title: "Import Euro SPF",
+      grade: "2x4 & 2x6 Dimensions",
+      description:
+        "European Spruce-Pine-Fir suitable for construction and industrial uses.",
+    },
+    {
+      title: "Boards - EWP/SPF/SYP",
+      grade: "1x3, 1x4, 1x6 Dimensions",
+      description:
+        "Versatile boards in Eastern White Pine, SPF, and SYP for trim, shelving, and craft projects.",
+    },
+    {
+      title: "KD Hem Fir / White Fir",
+      grade: "2x4-2x12 Dimensions",
+      description:
+        "Kiln-Dried Hemlock-Fir and White Fir lumber, known for stability and strength in construction.",
+    },
+    {
+      title: "Posts & Timbers",
+      grade: "Rough Sawn & S4S Options",
+      description:
+        "Heavy-duty posts and timbers available in Rough Sawn for a rustic look or S4S (Surfaced Four Sides) for a smooth finish.",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <>
+      {/* Full-width carousel with overlaid partners section */}
+      <div className="w-full relative">
+        <div className="relative">
+          <ImageCarousel />
+
+          {/* Our Partners section - overlaid on the gradient - tightened up */}
+          <div className="absolute bottom-0 left-0 right-0 z-30 transform translate-y-1/2">
+            <div className="max-w-3xl mx-auto px-4">
+              <div className="bg-white rounded-2xl shadow-xl py-6 px-8">
+                <h3 className="mt-2 text-2xl italic font-semibold text-center mb-4">
+                  Our Partners
+                </h3>
+                <div className="flex justify-center items-center gap-6 md:gap-10">
+                  <div className="w-32 h-16 relative">
+                    <Image
+                      src="/partner-1.png"
+                      alt="Partner 1"
+                      fill
+                      style={{ objectFit: "contain" }}
+                    />
+                  </div>
+                  <div className="w-32 h-16 relative">
+                    <Image
+                      src="/partner-2.png"
+                      alt="Partner 2"
+                      fill
+                      style={{ objectFit: "contain" }}
+                    />
+                  </div>
+                  <div className="w-32 h-16 relative">
+                    <Image
+                      src="/partner-3.png"
+                      alt="Partner 3"
+                      fill
+                      style={{ objectFit: "contain" }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </div>
+
+      {/* Products Section - Brutalist, Text-Based Design */}
+      <section className="py-32 bg-amber-50/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mt-10 mb-16 text-center">
+            {/* Title styling remains similar but can be adjusted if needed */}
+            <h2 className="text-4xl font-bold text-rose-900 mb-4 font-serif inline-block relative">
+              Our Lumber Products
+            </h2>
+            <p className="text-xl text-rose-900 max-w-3xl mx-auto">
+              Premium quality lumber sourced from sustainable forests, carefully
+              selected and graded for your construction projects
+            </p>
+          </div>
+
+          {/* Updated Product Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {lumberProducts.map((product, index) => (
+              <div
+                key={index}
+                // Removed shadow, group, rounded-sm, overflow-hidden. Added thicker border.
+                className="border-2 border-rose-800 bg-amber-50 flex flex-col"
+              >
+                <div className="p-6 flex flex-col h-full">
+                  {/* Title/Grade Section - Top border added, different style */}
+                  <div className="border-b-2 border-dashed border-rose-800/50 pb-4 mb-4">
+                    <h3 className="text-xl font-semibold text-rose-900 uppercase tracking-wider font-mono">
+                      {product.title}
+                    </h3>
+                    <p className="text-rose-900/80 text-sm font-semibold font-mono mt-1">
+                      {product.grade}
+                    </p>
+                  </div>
+
+                  {/* Description Section - Standard font for readability */}
+                  <p className="text-rose-800 mb-6 flex-grow text-base leading-relaxed">
+                    {product.description}
+                  </p>
+
+                  {/* Button Section - Separated by a top border */}
+                  <div className="mt-auto pt-4 border-t-2 border-dashed border-rose-800/50">
+                    {/* Brutalist button style */}
+                    <Link href="/contact">
+                      <button className="text-rose-800 hover:text-white border-2 border-rose-800 px-5 py-2 text-xs font-mono uppercase tracking-[.2em] hover:bg-rose-800 hover:text-ambroseer-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-rose-100 focus:ring-rose-700 cursor-pointer">
+                        Request Quote
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Banner with Quote */}
+      <section className="relative w-full h-[400px] md:h-[500px]">
+        {/* Background Image with Rose Overlay */}
+        <div className="absolute inset-0">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/main-3.png"
+            alt="Forest background"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <div className="absolute inset-0 bg-rose-900/70"></div>
+        </div>
+
+        {/* Content Container */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
+          {/* Profile Image */}
+          <div className="w-32 h-32 mb-8 overflow-hidden rounded-full border-4 border-white shadow-2xl">
+            {/* NOTE: Added a placeholder /profile.png - make sure to add this image to your public folder */}
+            <Image
+              src="/profile.png" // Make sure this image exists in /public
+              alt="Chris Langevin"
+              width={128}
+              height={128}
+              style={{ objectFit: "cover" }}
+              onError={(e) => {
+                // Optional: hide or replace if image fails to load
+                e.currentTarget.style.display = "none";
+                // Or show a placeholder div
+              }}
+            />
+          </div>
+
+          {/* Quote */}
+          <blockquote className="max-w-4xl mx-auto mb-6 text-3xl md:text-4xl lg:text-5xl font-serif italic">
+            "Our success comes from knowing both our mills and our customers.
+            That's what we've done since 1984."
+          </blockquote>
+
+          {/* Attribution */}
+          <p className="text-xl font-semibold tracking-wide uppercase">
+            Chris Langevin, President
+          </p>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-24 bg-amber-50/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-rose-900 mb-12 font-serif inline-block relative">
+            Our Story
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-8">
+            {" "}
+            {/* Increased space between paragraphs */}
+            <p className="text-xl text-rose-900 leading-relaxed">
+              Langevin Forest Products Inc was founded in 1984 as a partnership
+              between Moose River Lumber of Maine and Roger Langevin. When Moose
+              River Lumber was later sold to a paper company, Roger assumed full
+              ownership of LFP Inc.
+            </p>
+            {/* Optional divider */}
+            <hr className="border-t-2 border-dashed border-rose-800/30 w-1/4 mx-auto" />
+            <p className="text-xl text-rose-900 leading-relaxed">
+              Roger began his journey in the lumber industry with Furman Lumber
+              (now Boisie Cascade) in 1979. A Vietnam-era veteran, he holds
+              degrees in forestry and business from Syracuse and New Hampshire
+              universities. Born in Quebec, Roger is also fluent in French.
+            </p>
+            {/* Optional divider */}
+            <hr className="border-t-2 border-dashed border-rose-800/30 w-1/4 mx-auto" />
+            <p className="text-xl text-rose-900 leading-relaxed">
+              Christopher Langevin joined the company in 1994 after graduating
+              from Worcester State University. Under his influence, the company
+              expanded its profile from strictly wholesale to include mill
+              representation. Today, we hold exclusivity with Delco Forest
+              Products (New Brunswick) and manage US sales for Group Crete
+              (Quebec). We collaborate with various mills across Eastern and
+              Western species, utilizing reload locations throughout Canada and
+              the Eastern US.
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
