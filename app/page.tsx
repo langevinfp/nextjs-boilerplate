@@ -149,7 +149,7 @@ export default function Home() {
       </div>
 
       {/* Products Section - Brutalist, Text-Based Design */}
-      <section className="py-32 bg-amber-50/30">
+      <section id="lumber-products" className="py-32 bg-amber-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mt-10 mb-16 text-center">
             {/* Title styling remains similar but can be adjusted if needed */}
@@ -248,7 +248,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-24 bg-amber-50/30">
+      <section id="about-us" className="py-24 bg-amber-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-rose-900 mb-12 font-serif inline-block relative">
             Our Story
@@ -285,10 +285,10 @@ export default function Home() {
             {/* Meet the Team Link */}
             <div className="mt-12">
               <Link
-                href="/our-team"
+                href="/about-us"
                 className="inline-flex items-center text-lg font-medium text-rose-800 border-b-2 border-rose-800/50 hover:border-rose-800 transition-all duration-300 group"
               >
-                Meet the Team
+                More about us
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"

@@ -9,7 +9,7 @@ export default function Header() {
   const pathname = usePathname();
 
   const navItems = [
-    { label: "LUMBER PRODUCTS", href: "/lumber-products" },
+    { label: "LUMBER PRODUCTS", href: "/#lumber-products" },
     { label: "ABOUT US", href: "/about-us" },
     { label: "OUR TEAM", href: "/our-team" },
     { label: "CONTACT", href: "/contact" },

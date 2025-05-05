@@ -107,7 +107,7 @@ export default function Footer() {
                 Our Team
               </Link>
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="block text-sm hover:text-rose-800 transition-colors"
               >
                 Contact Page
@@ -187,7 +187,7 @@ export default function Footer() {
           <p className="text-sm text-stone-600">
             {" "}
             {/* Standard text size */}© {new Date().getFullYear()} Langevin
-            Forest Products, Inc. All rights reserved. Test
+            Forest Products, Inc. All rights reserved.
           </p>
         </div>
       </div>
