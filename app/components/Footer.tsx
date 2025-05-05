@@ -187,7 +187,7 @@ export default function Footer() {
           <p className="text-sm text-stone-600">
             {" "}
             {/* Standard text size */}© {new Date().getFullYear()} Langevin
-            Forest Products, Inc. All rights reserved.
+            Forest Products, Inc. All rights reserved. Test
           </p>
         </div>
       </div>
