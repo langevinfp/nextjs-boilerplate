@@ -58,25 +58,25 @@ export default function AboutUs() {
   const whyChooseUs = [
     {
       icon: FaChartLine,
-      title: "Market Intelligence",
+      title: "Market\nIntelligence",
       description:
         "Deep understanding of market trends, pricing, and availability to guide your purchasing decisions.",
     },
     {
       icon: FaBullseye,
-      title: "Product Solutions",
+      title: "Product\nSolutions",
       description:
         "Expertise in sourcing the specific lumber grades and species required for your unique projects.",
     },
     {
       icon: FaTruck,
-      title: "Logistics Management",
+      title: "Logistics\nManagement",
       description:
         "Efficient coordination of transportation and inventory through strategic reload locations across Canada and the Eastern US.",
     },
     {
       icon: FaStar,
-      title: "Outstanding Service",
+      title: "Outstanding\nService",
       description:
         "Dedicated customer support focused on responsiveness, reliability, and building long-term trust.",
     },
@@ -117,15 +117,13 @@ export default function AboutUs() {
               to hold exclusive sales representation for{" "}
               <span className="font-semibold text-rose-800">
                 Delco Forest Products
-              </span>{" "}
-              (New Brunswick) in the US market. Additionally, we maintain key
-              partnerships with{" "}
+              </span>
+              . Additionally, we maintain key partnerships with{" "}
               <span className="font-semibold text-rose-800">Group Crete</span>{" "}
-              (Quebec) and{" "}
-              <span className="font-semibold text-rose-800">Lulumco</span>, and
-              collaborate with a wide variety of mills specializing in Eastern
-              species. This network allows us to offer a comprehensive range of
-              products and ensure reliable supply for our clients.
+              and <span className="font-semibold text-rose-800">Lulumco</span>,
+              and collaborate with a wide variety of mills specializing in
+              Eastern species. This network allows us to offer a comprehensive
+              range of products and ensure reliable supply for our clients.
             </p>
             <p className="leading-relaxed">
               Utilizing reload locations throughout Canada and the Eastern US,
@@ -134,7 +132,7 @@ export default function AboutUs() {
             </p>
             <div className="mt-6 pt-4 border-t border-dashed border-rose-300">
               <Link
-                href="/#lumber-products"
+                href="/lumber-products"
                 className="inline-flex items-center text-rose-700 hover:text-rose-900 transition-all duration-300 group font-medium"
               >
                 <FaChevronRight className="mr-2 text-xs transition-transform group-hover:scale-110" />
@@ -169,7 +167,7 @@ export default function AboutUs() {
                 <div className="mb-4 inline-flex justify-center items-center w-16 h-16 rounded-full bg-rose-100 text-rose-700 shadow-sm">
                   <item.icon className="text-3xl" />
                 </div>
-                <h3 className="text-xl font-semibold text-rose-900 mb-2 font-mono tracking-wide">
+                <h3 className="text-xl font-semibold text-rose-900 mb-2 font-mono tracking-wide whitespace-pre-line">
                   {item.title}
                 </h3>
                 <p className="text-base text-rose-800/80 leading-relaxed">

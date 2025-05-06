@@ -107,7 +107,7 @@ export default function Footer() {
                 Our Team
               </Link>
               <Link
-                href="/contact-us"
+                href="/contact"
                 className="block text-sm hover:text-rose-800 transition-colors"
               >
                 Contact Page

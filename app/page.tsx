@@ -199,6 +199,20 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          {/* View All Products Button */}
+          <div className="mt-16 text-center">
+            <Link href="/lumber-products">
+              <button
+                className="px-8 py-4 bg-rose-700 text-white text-xl font-semibold rounded-lg
+                shadow-lg hover:shadow-xl hover:bg-rose-800
+                transition-colors duration-200 cursor-pointer
+                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-700"
+              >
+                View All Products
+              </button>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -219,12 +233,11 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
           {/* Profile Image */}
           <div className="w-32 h-32 mb-8 overflow-hidden rounded-full border-4 border-white shadow-2xl">
-            {/* NOTE: Added a placeholder /profile.png - make sure to add this image to your public folder */}
             <Image
-              src="/profile.png" // Make sure this image exists in /public
+              src="/portrait-2.png" // Make sure this image exists in /public
               alt="Chris Langevin"
-              width={128}
-              height={128}
+              width={200}
+              height={200}
               style={{ objectFit: "cover" }}
               onError={(e) => {
                 // Optional: hide or replace if image fails to load
