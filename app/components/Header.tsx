@@ -18,14 +18,18 @@ export default function Header() {
   return (
     <header className="w-full py-4 px-6 fixed top-0 left-0 z-50 bg-white shadow-lg">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/logo.svg"
-            alt="Langevin Forest Products Logo"
-            width={150}
-            height={50}
-            priority
-          />
+        <Link href="/" className="flex items-center relative group p-2 rounded-lg transition-all duration-300 hover:bg-rose-50">
+          <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-rose-200 transition-all duration-300"></div>
+          <div className="relative transition-transform duration-300 group-hover:scale-105">
+            <Image
+              src="/logo.svg"
+              alt="Langevin Forest Products Logo"
+              width={150}
+              height={50}
+              priority
+              className="transition-all duration-300 group-hover:brightness-110"
+            />
+          </div>
         </Link>
 
         <nav>

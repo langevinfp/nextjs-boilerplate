@@ -194,13 +194,6 @@ export default function Products() {
                     </div>
                   </div>
 
-                  {/* Mill Source */}
-                  <div className="mb-4 pb-4 border-b-2 border-dashed border-rose-800/50">
-                    <p className="text-sm text-rose-700">
-                      <strong>Source:</strong> {product.mill}
-                    </p>
-                  </div>
-
                   {/* Description Section */}
                   <p className="text-rose-800 mb-6 flex-grow text-base leading-relaxed">
                     {product.description}

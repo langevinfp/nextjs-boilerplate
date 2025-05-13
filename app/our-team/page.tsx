@@ -58,11 +58,12 @@ export default function OurTeam() {
     <div className="min-h-screen overflow-x-hidden bg-white">
       {/* --- Animated Wood Grain Background --- */}
       <div
-        className="fixed inset-0 z-0 opacity-10"
+        className="absolute inset-0 z-0 opacity-10 h-full w-full"
         style={{
           backgroundImage:
             "url('https://www.transparenttextures.com/patterns/wood-pattern.png')",
           transform: `translateY(${offset * 0.2}px)`,
+          pointerEvents: "none", // Ensures clicks pass through to elements below
         }}
       ></div>
 
