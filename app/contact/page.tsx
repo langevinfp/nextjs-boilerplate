@@ -284,13 +284,18 @@ export default function ContactUs() {
             Our Location
           </h2>
           <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-md">
-            {/* Placeholder for map - in a real implementation, you would use Google Maps or another map provider */}
-            <div className="w-full h-96 bg-stone-200 flex items-center justify-center">
-              <p className="text-stone-600 text-lg">
-                Map placeholder - Integrate Google Maps or other map service
-                here
-              </p>
-            </div>
+            {/* Google Maps embed using the physical location for directions */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.0736618639193!2d-71.7889572!3d42.4208897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3f4a8c9c9b8c3%3A0x9f5a5c5c5c5c5c5c!2s50%20Leominster%20Rd%2C%20Sterling%2C%20MA%2001564!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Langevin Forest Products Location"
+              className="w-full h-96"
+            ></iframe>
           </div>
         </div>
       </section>

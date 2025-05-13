@@ -18,33 +18,33 @@ export default function Products() {
       name: "Delco Forest Products",
       logo: "/partner-3.png", // Delco logo
       description:
-        "Exclusive sales representation. Specializing in premium Eastern SPF lumber with a focus on consistent quality and reliable supply.",
-      location: "Quebec, Canada",
+        "Delco is the exclusive sales partner for Langevin Forest Products, handling all transactions in Canada and the U.S. through its dedicated sales office. Delco is committed to excellence, offering select a stud grade and select #2 grade that are known for outstanding quality. To meet customer needs, Delco gladly accommodates special trim requests whenever possible.",
+      location: "New Brunswick, Canada",
       products: [
-        "2x3 - 2x12 SPF",
-        "Premium Framing Lumber",
-        "Kiln-Dried Products",
+        "2x3 - 2x6 SPF",
+        "Econ, Stud NPS, & #2 NPS",
+        "Lengths 9' & Shorter - Includes Special Trims",
       ],
     },
     {
       name: "Group Crete",
       logo: "/partner-2.png", // Replace with actual logo
       description:
-        "Key partnership offering a wide range of dimensional lumber products with exceptional grading standards.",
-      location: "Eastern Canada",
+        "Group Crete is a valued partner of Langevin Forest Products, holding rights to sell Crete stock in the U.S. market. As a dimensional lumber mill, Crete specializes in a range of products, including stud trims and unique odd lengths, offering versatile solutions to meet diverse customer needs.",
+      location: "Quebec, Canada",
       products: [
-        "Dimensional Lumber",
-        "SPF Products",
-        "Construction-Grade Materials",
+        "2x3-2x10 SPF",
+        "Econ to Premium Grade",
+        "Lengths 16' & Shorter - Including Odd Lengths",
       ],
     },
     {
       name: "Lulumco",
       logo: "/partner-1.png", // Lulumco logo
       description:
-        "Long-standing partnership providing high-quality lumber products from sustainable forest management practices.",
+        "Lulumco has been a trusted partner of Langevin Forest Products for over 20 years, renowned in the industry for its top-notch lumber, especially favored by shed builders for its exceptional quality. A standout feature Lulumco offers is customized lumber stamping, allowing customers to have their company name stenciled on the wood before it arrives at their yard, adding a personalized touch to every order.",
       location: "Quebec, Canada",
-      products: ["Premium SPF Lumber", "Specialty Cuts", "Custom Dimensions"],
+      products: ["1x2, 1x2- 2x6 SPF", "Stud Grade NPS", "Lengths 8' & Shorter"],
     },
   ];
 
@@ -256,9 +256,7 @@ export default function Products() {
             {partneredSawmills.map((mill, index) => (
               <div
                 key={index}
-                className={`flex flex-col md:flex-row ${
-                  index % 2 === 1 ? "md:flex-row-reverse" : ""
-                } bg-slate-700 rounded-lg overflow-hidden shadow-md border border-slate-600`}
+                className="flex flex-col md:flex-row bg-slate-700 rounded-lg overflow-hidden shadow-md border border-slate-600"
               >
                 {/* Logo Section with Circular Background */}
                 <div className="md:w-1/4 p-6 flex items-center justify-center">

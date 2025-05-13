@@ -283,7 +283,7 @@ export default function AboutUs() {
                 />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity delay-100 px-2 text-center">
-                    Chris Langevin
+                    {index === 0 ? "Chris and Roger Langevin" : (index === 3 ? "Roger Langevin" : "Chris Langevin")}
                   </span>
                 </div>
               </div>
