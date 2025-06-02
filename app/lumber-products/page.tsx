@@ -52,9 +52,11 @@ export default function Products() {
   const lumberProducts = [
     {
       title: "Canadian SPF",
-      grade: "Various Dimensions",
-      description:
-        "Available in 2x4-2x12, 2x3-2x12, and 2x4-2x6 sizes. Ideal for general construction and framing.",
+      description: [
+        "Dimensions: 2x4-2x12 16' and Shorter (Including Special Trims)",
+        "Grades: Econ - MSR, Including Premium",
+        "Use: Ideal for General Construction and framing"
+      ],
       icon: FaLeaf,
       mill: "Delco Forest Products",
       features: [
@@ -66,9 +68,11 @@ export default function Products() {
     },
     {
       title: "Southern Yellow Pine (SYP)",
-      grade: "Various Grades & Dimensions",
-      description:
-        "Strong and dense pine available in 2x4-2x12 sizes across multiple grades for structural applications.",
+      description: [
+        "Dimensions: 2x4-2x12 20' and shorter",
+        "Grades: #4 - MSR including DSS & SS",
+        "Use: Structural applications"
+      ],
       icon: FaTree,
       mill: "Group Crete",
       features: [
@@ -80,9 +84,11 @@ export default function Products() {
     },
     {
       title: "Import Euro SPF",
-      grade: "2x4 & 2x6 Dimensions",
-      description:
-        "European Spruce-Pine-Fir suitable for construction and industrial uses.",
+      description: [
+        "Dimensions: 2x4-2x12 8'-20'",
+        "Grades: 2x4 & 2x6",
+        "Use: Construction and industrial uses"
+      ],
       icon: FaShip,
       mill: "Lulumco",
       features: [
@@ -94,9 +100,11 @@ export default function Products() {
     },
     {
       title: "Boards - EWP/SPF/SYP",
-      grade: "1x3, 1x4, 1x6 Dimensions",
-      description:
-        "Versatile boards in Eastern White Pine, SPF, and SYP for trim, shelving, and craft projects.",
+      description: [
+        "Dimensions: 1x3-1x6 8'-16'",
+        "Grades: All Grades",
+        "Use: Trim, shelving, and craft projects"
+      ],
       icon: FaWarehouse,
       mill: "Multiple Sources",
       features: [
@@ -108,9 +116,11 @@ export default function Products() {
     },
     {
       title: "KD Hem Fir / White Fir",
-      grade: "2x4-2x12 Dimensions",
-      description:
-        "Kiln-Dried Hemlock-Fir and White Fir lumber, known for stability and strength in construction.",
+      description: [
+        "Dimensions: 2x4-2x12 8'-26'",
+        "Grades: Stud - Select Structural including Premium",
+        "Use: Construction applications"
+      ],
       icon: FaIndustry,
       mill: "Delco Forest Products",
       features: [
@@ -122,9 +132,11 @@ export default function Products() {
     },
     {
       title: "Posts & Timbers",
-      grade: "Rough Sawn & S4S Options",
-      description:
-        "Heavy-duty posts and timbers available in Rough Sawn for a rustic look or S4S (Surfaced Four Sides) for a smooth finish.",
+      description: [
+        "Dimensions: Rough Sawn 4x4-6x12 / S4S 4x4-6x6",
+        "Grades: Green / KD Appearance",
+        "Use: Structural applications"
+      ],
       icon: FaTree,
       mill: "Group Crete",
       features: [
@@ -188,19 +200,31 @@ export default function Products() {
                       <h3 className="text-xl font-semibold text-rose-900 uppercase tracking-wider font-mono">
                         {product.title}
                       </h3>
-                      <p className="text-rose-900/80 text-sm font-semibold font-mono mt-1">
-                        {product.grade}
-                      </p>
+
                     </div>
                   </div>
+                  <div className="border-b-2 border-dashed border-rose-800/50 w-full mb-4" />
 
                   {/* Description Section */}
                   <p className="text-rose-800 mb-6 flex-grow text-base leading-relaxed">
-                    {product.description}
+                    {Array.isArray(product.description) ? (
+                      product.description.map((line, i) => {
+                        const label = line.split(':')[0];
+                        const content = line.split(':')[1];
+                        return (
+                          <span key={i} className="block mb-1">
+                            <span className="font-semibold">{label}:</span>
+                            <span className="ml-1">{content}</span>
+                          </span>
+                        );
+                      })
+                    ) : (
+                      <span className="block">{product.description}</span>
+                    )}
                   </p>
 
                   {/* Features Section */}
-                  <div className="mt-4">
+                  <div className="mt-2">
                     <h4 className="text-sm font-semibold text-rose-800 mb-2 uppercase tracking-wider">
                       Key Features:
                     </h4>
@@ -217,7 +241,7 @@ export default function Products() {
                   </div>
 
                   {/* Button Section */}
-                  <div className="mt-auto pt-4 border-t-2 border-dashed border-rose-800/50">
+                  <div className="mt-6 pt-4 border-t-2 border-dashed border-rose-800/50">
                     <Link href="/contact">
                       <button className="text-rose-800 hover:text-amber-100 border-2 border-rose-800 px-5 py-2 text-xs font-mono uppercase tracking-[.2em] hover:bg-rose-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-rose-100 focus:ring-rose-700 cursor-pointer">
                         Request Quote

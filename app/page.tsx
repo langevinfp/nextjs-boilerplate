@@ -66,39 +66,51 @@ export default function Home() {
   const lumberProducts = [
     {
       title: "Canadian SPF",
-      grade: "Various Dimensions",
-      description:
-        "Available in 2x4-2x12, 2x3-2x12, and 2x4-2x6 sizes. Ideal for general construction and framing.",
+      description: [
+        "Dimensions: 2x4-2x12 16' and Shorter (Including Special Trims)",
+        "Grades: Econ - MSR, Including Premium",
+        "Use: Ideal for General Construction and framing"
+      ],
     },
     {
       title: "Southern Yellow Pine (SYP)",
-      grade: "Various Grades & Dimensions",
-      description:
-        "Strong and dense pine available in 2x4-2x12 sizes across multiple grades for structural applications.",
+      description: [
+        "Dimensions: 2x4-2x12 20' and shorter",
+        "Grades: #4 - MSR including DSS & SS",
+        "Use: Structural applications"
+      ],
     },
     {
       title: "Import Euro SPF",
-      grade: "2x4 & 2x6 Dimensions",
-      description:
-        "European Spruce-Pine-Fir suitable for construction and industrial uses.",
+      description: [
+        "Dimensions: 2x4-2x12 8'-20'",
+        "Grades: 2x4 & 2x6",
+        "Use: Construction and industrial uses"
+      ],
     },
     {
       title: "Boards - EWP/SPF/SYP",
-      grade: "1x3, 1x4, 1x6 Dimensions",
-      description:
-        "Versatile boards in Eastern White Pine, SPF, and SYP for trim, shelving, and craft projects.",
+      description: [
+        "Dimensions: 1x3-1x6 8'-16'",
+        "Grades: All Grades",
+        "Use: Trim, shelving, and craft projects"
+      ],
     },
     {
       title: "KD Hem Fir / White Fir",
-      grade: "2x4-2x12 Dimensions",
-      description:
-        "Kiln-Dried Hemlock-Fir and White Fir lumber, known for stability and strength in construction.",
+      description: [
+        "Dimensions: 2x4-2x12 8'-26'",
+        "Grades: Stud - Select Structural including Premium",
+        "Use: Construction applications"
+      ],
     },
     {
       title: "Posts & Timbers",
-      grade: "Rough Sawn & S4S Options",
-      description:
-        "Heavy-duty posts and timbers available in Rough Sawn for a rustic look or S4S (Surfaced Four Sides) for a smooth finish.",
+      description: [
+        "Dimensions: Rough Sawn 4x4-6x12 / S4S 4x4-6x6",
+        "Grades: Green / KD Appearance",
+        "Use: Structural applications"
+      ],
     },
   ];
 
@@ -171,19 +183,29 @@ export default function Home() {
                 className="border-2 border-rose-800 bg-amber-50 flex flex-col"
               >
                 <div className="p-6 flex flex-col h-full">
-                  {/* Title/Grade Section - Top border added, different style */}
+                  {/* Title Section */}
                   <div className="border-b-2 border-dashed border-rose-800/50 pb-4 mb-4">
                     <h3 className="text-xl font-semibold text-rose-900 uppercase tracking-wider font-mono">
                       {product.title}
                     </h3>
-                    <p className="text-rose-900/80 text-sm font-semibold font-mono mt-1">
-                      {product.grade}
-                    </p>
                   </div>
 
-                  {/* Description Section - Standard font for readability */}
+                  {/* Description Section */}
                   <p className="text-rose-800 mb-6 flex-grow text-base leading-relaxed">
-                    {product.description}
+                    {Array.isArray(product.description) ? (
+                      product.description.map((line, i) => {
+                        const label = line.split(':')[0];
+                        const content = line.split(':')[1];
+                        return (
+                          <span key={i} className="block mb-1">
+                            <span className="font-semibold">{label}:</span>
+                            <span className="ml-1">{content}</span>
+                          </span>
+                        );
+                      })
+                    ) : (
+                      <span className="block">{product.description}</span>
+                    )}
                   </p>
 
                   {/* Button Section - Separated by a top border */}
