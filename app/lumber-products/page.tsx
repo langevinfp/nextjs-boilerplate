@@ -10,8 +10,18 @@ import {
   FaWarehouse,
   FaCheckCircle,
 } from "react-icons/fa";
+import { useState, useEffect } from "react";
 
-export default function Products() {
+export default function LumberProducts() {
+  const [showFilters, setShowFilters] = useState(false);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setOffset(window.pageYOffset);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Array of partnered sawmills with details
   const partneredSawmills = [
     {
@@ -155,23 +165,31 @@ export default function Products() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section
-        className="bg-stone-100 py-16 border-b border-stone-200"
-        style={{
-          backgroundImage: `url("${patternDataUri}")`,
-          backgroundRepeat: "repeat",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-rose-900 mb-4">
-            Our Products
-          </h1>
-          <p className="text-xl text-stone-600 max-w-3xl mx-auto">
-            Premium quality lumber sourced from sustainable forests, carefully
-            selected and graded for your construction projects
+      <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+        {/* Parallax background */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-rose-900 to-rose-800"
+          style={{ transform: `translateY(${offset * 0.5}px)` }}
+        ></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+          <div className="mb-4 transform transition-all duration-700 hover:rotate-12">
+            <FaLeaf className="text-5xl md:text-6xl text-amber-200/80 mx-auto animate-pulse-subtle" />
+          </div>
+
+          <div className="relative inline-block mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight text-white text-shadow-lg relative z-10">
+              Our Products
+            </h1>
+            <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-amber-300/40"></div>
+          </div>
+
+          <p className="text-lg md:text-xl text-amber-100/90 font-light max-w-3xl mx-auto leading-relaxed">
+            Premium lumber sourced from trusted mills, carefully selected and graded for your construction projects
           </p>
         </div>
-      </section>
+      </div>
 
       {/* Products Section */}
       <section className="py-16 bg-white">

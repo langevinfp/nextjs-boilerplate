@@ -16,8 +16,18 @@ import {
   FaStar, // For Customer Service
   FaChartLine, // For Market Intelligence
 } from "react-icons/fa";
+import { useState, useEffect } from "react";
 
 export default function AboutUs() {
+  const [showModal, setShowModal] = useState(false);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setOffset(window.pageYOffset);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Array of portrait images for Chris Langevin
   const chrisPortraits = [
     "/portrait-1.png",
@@ -84,14 +94,28 @@ export default function AboutUs() {
 
   return (
     <div className="bg-gradient-to-b from-stone-50 via-amber-50/50 to-white min-h-screen overflow-x-hidden">
-      {/* --- Hero Section --- */}
-      <div className="relative text-center py-24 md:py-32 px-4 bg-gradient-to-r from-rose-900 to-rose-800 text-white overflow-hidden">
-        <div className="relative z-10">
-          <FaBuilding className="text-5xl md:text-6xl text-amber-200/80 mx-auto mb-6 animate-pulse-subtle" />
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-serif leading-tight text-shadow-md">
-            About Langevin Forest Products
-          </h1>
-          <p className="text-xl md:text-2xl text-amber-100/90 font-light max-w-4xl mx-auto leading-relaxed">
+      {/* Hero Section */}
+      <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+        {/* Parallax background */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-rose-900 to-rose-800"
+          style={{ transform: `translateY(${offset * 0.5}px)` }}
+        ></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+          <div className="mb-4 transform transition-all duration-700 hover:rotate-12">
+            <FaBuilding className="text-5xl md:text-6xl text-amber-200/80 mx-auto animate-pulse-subtle" />
+          </div>
+
+          <div className="relative inline-block mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight text-white text-shadow-lg relative z-10">
+              About Us
+            </h1>
+            <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-amber-300/40"></div>
+          </div>
+
+          <p className="text-lg md:text-xl text-amber-100/90 font-light max-w-3xl mx-auto leading-relaxed">
             A trusted lumber wholesaler since 1984, connecting North American
             mills with lumber yards, truss manufacturers, and industrial users.
           </p>

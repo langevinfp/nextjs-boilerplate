@@ -7,6 +7,7 @@ import {
   FaQuoteLeft,
   FaLinkedin,
   FaEnvelope,
+  FaPhone,
   FaTree,
   FaLeaf,
   FaSeedling,
@@ -29,7 +30,7 @@ export default function OurTeam() {
       name: "Roger Langevin",
       role: "Founder",
       image: "/roger.png",
-      bio: "Roger hails from Quebec, Canada, and moved to the U.S. at 18. He served in the military during the Vietnam era, then worked his way through Syracuse University of New Hampshire, earning a Master's in Business and Forestry. His know-how in business and love for forestry have shaped him into a steady hand at LFP Inc., where he leads with practical wisdom.",
+      bio: "Roger hails from Quebec, Canada, and moved to the U.S. at 13. He served in the military during the Vietnam era, then worked his way through Syracuse University and New Hampshire, earning a Master's in Business and Forestry. His know-how in business and love for forestry have shaped him into a steady hand at LFP Inc., where he leads with practical wisdom.",
       icon: FaTree,
       specialty: "Business Strategy & Forestry",
       color: "from-emerald-700 to-emerald-900",
@@ -77,19 +78,15 @@ export default function OurTeam() {
 
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          {/* No top decorative lines as requested */}
-
           <div className="mb-4 transform transition-all duration-700 hover:rotate-12">
             <FaUsers className="text-5xl md:text-6xl text-amber-200/80 mx-auto animate-pulse-subtle" />
           </div>
 
-          {/* Header with decorative border */}
           <div className="relative inline-block mb-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight text-white text-shadow-lg relative z-10">
               Meet Our Team
             </h1>
-            <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-amber-300/60"></div>
-            <div className="absolute -bottom-5 left-10 right-10 h-0.5 bg-amber-200/40"></div>
+            <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-amber-300/40"></div>
           </div>
 
           <p className="text-lg md:text-xl text-amber-100/90 font-light max-w-3xl mx-auto leading-relaxed">
@@ -157,7 +154,7 @@ export default function OurTeam() {
                       <h2 className="text-3xl font-bold text-white mb-1">
                         {member.name}
                       </h2>
-                      <p className="text-xl font-medium text-amber-200">
+                      <p className="text-xl font-medium text-white">
                         {member.role}
                       </p>
                     </div>
@@ -182,9 +179,19 @@ export default function OurTeam() {
 
                     <div className="relative pl-8 pt-2">
                       <FaQuoteLeft className="absolute top-0 left-0 text-2xl text-rose-300" />
-                      <p className="text-lg leading-relaxed text-gray-700">
+                      <p className="text-lg leading-relaxed text-gray-700 mb-4">
                         {member.bio}
                       </p>
+                      {member.name === "Chris Langevin" && (
+                        <p className="text-sm text-rose-700">
+                          sales@langevinfp.com | 978-422-3939
+                        </p>
+                      )}
+                      {member.name === "Lylee" && (
+                        <p className="text-sm text-rose-700">
+                          lylee@langevinfp.com | 801-391-5408
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
