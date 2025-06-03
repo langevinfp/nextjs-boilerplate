@@ -126,7 +126,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto px-4">
               <div className="bg-white rounded-2xl shadow-xl py-6 px-8">
                 <h3 className="mt-2 text-2xl italic font-semibold text-center mb-4">
-                  Our Partners
+                  Our Close Partners
                 </h3>
                 <div className="flex justify-center items-center gap-6 md:gap-10">
                   <div className="w-32 h-16 relative">

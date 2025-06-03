@@ -45,7 +45,7 @@ export default function ContactUs() {
           </h1>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto">
             We're here to answer any questions you may have about our products
-            and services. Reach out to us and we'll respond as soon as we can.
+            and services.
           </p>
         </div>
       </section>
@@ -182,7 +182,7 @@ export default function ContactUs() {
                   Send Us a Message
                 </h2>
                 <p className="text-stone-600 mb-8">
-                  Fill out the form below and we'll get back to you as soon as
+                  Please fill out the form below and we'll get back to you as soon as
                   possible.
                 </p>
 

@@ -28,11 +28,11 @@ export default function LumberProducts() {
       name: "Delco Forest Products",
       logo: "/partner-3.png", // Delco logo
       description:
-        "Delco is the exclusive sales partner for Langevin Forest Products, handling all transactions in Canada and the U.S. through its dedicated sales office. Delco is committed to excellence, offering select a stud grade and select #2 grade that are known for outstanding quality. To meet customer needs, Delco gladly accommodates special trim requests whenever possible.",
+        "Langevin Forest Products is the exclusive sales partner for Delco Forest Products, handling all transactions in Canada and the U.S. through its dedicated sales office. Delco is committed to excellence, offering a NPS Stud & NPS #2 grades that are known for outstanding quality. To meet customer needs, Delco gladly accommodates special trim requests whenever possible.",
       location: "New Brunswick, Canada",
       products: [
         "2x3 - 2x6 SPF",
-        "Econ, Stud NPS, & #2 NPS",
+        "PMO, Stud NPS, & #2 NPS",
         "Lengths 9' & Shorter - Includes Special Trims",
       ],
     },
@@ -40,7 +40,7 @@ export default function LumberProducts() {
       name: "Group Crete",
       logo: "/partner-2.png", // Replace with actual logo
       description:
-        "Group Crete is a valued partner of Langevin Forest Products, holding rights to sell Crete stock in the U.S. market. As a dimensional lumber mill, Crete specializes in a range of products, including stud trims and unique odd lengths, offering versatile solutions to meet diverse customer needs.",
+        "Group Crete has been a valued partner of Langevin Forest Products for 15 years. As a dimensional lumber mill, Crete specializes in a range of products, including stud trims, random lengths, and unique odd lengths, offering versatile solutions to meet diverse customer needs.",
       location: "Quebec, Canada",
       products: [
         "2x3-2x10 SPF",
