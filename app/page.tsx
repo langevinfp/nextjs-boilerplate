@@ -17,7 +17,7 @@ const ImageCarousel = () => {
   }, [images.length]); // Add images.length to dependency array
 
   return (
-    <div className="relative w-full h-[550px] overflow-hidden">
+    <div className="relative w-full h-[550px] sm:h-[400px] md:h-[550px] overflow-hidden">
       {images.map((src, index) => (
         <div
           key={src}
@@ -40,7 +40,7 @@ const ImageCarousel = () => {
 
       {/* Text overlay - centered */}
       <div className="absolute top-5/12 left-0 right-0 transform -translate-y-1/2 z-20 text-center px-4">
-        <h2 className="text-5xl md:text-6xl lg:text-7xl max-w-5xl font-bold text-white mx-auto mb-8 text-shadow-2xl">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl max-w-5xl font-bold text-white mx-auto mb-8 text-shadow-2xl px-4">
           Connecting Quality Mills to Quality Customers
         </h2>
 
@@ -48,10 +48,10 @@ const ImageCarousel = () => {
         <Link href="/contact">
           <button
             className="
-              mt-6 px-8 py-4 bg-rose-700 text-white text-xl font-semibold rounded-lg
-              shadow-2xl hover:shadow-lg hover:bg-rose-800
+              mt-4 px-6 py-3 bg-rose-700 text-white text-lg sm:text-xl font-semibold rounded-lg
+              shadow-lg hover:shadow-xl hover:bg-rose-800
               transition-colors duration-200 cursor-pointer
-              focus:outline-none focus:ring-0
+              focus:outline-none focus:ring-0 w-full sm:w-auto
             "
           >
             CONTACT US
