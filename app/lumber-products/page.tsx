@@ -40,7 +40,7 @@ export default function LumberProducts() {
       name: "Group Crete",
       logo: "/partner-2.png", // Replace with actual logo
       description:
-        "Group Crete has been a valued partner of Langevin Forest Products for 15 years. As a dimensional lumber mill, Crete specializes in a range of products, including stud trims, random lengths, and unique odd lengths, offering versatile solutions to meet diverse customer needs.",
+        "Group Crete has been a valued partner of Langevin Forest Products for 15 years. As a dimensional lumber mill, Crete specializes in a range of products, from economy to premium grade, including stud trims, random lengths, and unique odd lengths. This diverse range allows Crete to offer versatile solutions that meet the varying needs of customers, ensuring high-quality products across all grades.",
       location: "Quebec, Canada",
       products: [
         "2x3-2x10 SPF",
