@@ -53,6 +53,24 @@ export default function OurTeam() {
       specialty: "Sales & Client Development",
       color: "from-rose-700 to-rose-900",
     },
+    {
+      name: "Kristy Mahon",
+      role: "Accounts Payable",
+      image: "/no-image.jpg", // Using a placeholder image path to satisfy type requirements
+      bio: "Work: (978) 422-3939\nEmail: admin@langevinfp.com",
+      icon: FaEnvelope,
+      specialty: "Finance",
+      color: "from-blue-700 to-blue-900",
+    },
+    {
+      name: "Gerri Aquino",
+      role: "Accounts Receivable",
+      image: "/no-image.jpg", // Using a placeholder image path to satisfy type requirements
+      bio: "Work: (978) 422-3939\nEmail: admin2@langevinfp.com",
+      icon: FaEnvelope,
+      specialty: "Finance",
+      color: "from-blue-700 to-blue-900",
+    },
   ];
 
   return (
@@ -115,7 +133,7 @@ export default function OurTeam() {
 
         {/* Team Members - Interactive Cards */}
         <section className="space-y-32">
-          {teamMembers.map((member, index) => (
+          {teamMembers.filter(member => member.name !== "Kristy Mahon" && member.name !== "Gerri Aquino").map((member, index) => (
             <div key={index} className="relative">
               {/* Background accent */}
               <div
@@ -128,37 +146,49 @@ export default function OurTeam() {
 
               <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  {/* Image section */}
-                  <div
-                    className={`relative h-96 md:h-auto ${
-                      index % 2 === 1 ? "md:order-2" : ""
-                    }`}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent z-10"></div>
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      style={{
-                        objectFit: "cover",
-                        objectPosition:
-                          member.name === "Roger Langevin"
-                            ? "center 42%"
-                            : "center 35%",
-                      }}
-                      className="transition-transform duration-500 hover:scale-110"
-                    />
-
-                    {/* Overlay with name and role */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20 bg-gradient-to-t from-black/80 to-transparent">
-                      <h2 className="text-3xl font-bold text-white mb-1">
-                        {member.name}
-                      </h2>
-                      <p className="text-xl font-medium text-white">
-                        {member.role}
-                      </p>
+                  {member.name === "Kristy Mahon" || member.name === "Gerri Aquino" ? (
+                    <div className="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
+                      <div className="text-center">
+                        <h2 className="text-3xl font-bold text-gray-800 mb-1">
+                          {member.name}
+                        </h2>
+                        <p className="text-xl font-medium text-gray-600">
+                          {member.role}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div
+                      className={`relative h-96 md:h-auto ${
+                        index % 2 === 1 ? "md:order-2" : ""
+                      }`}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent z-10"></div>
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        style={{
+                          objectFit: "cover",
+                          objectPosition:
+                            member.name === "Roger Langevin"
+                              ? "center 42%"
+                              : "center 35%",
+                        }}
+                        className="transition-transform duration-500 hover:scale-110"
+                      />
+
+                      {/* Overlay with name and role */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6 z-20 bg-gradient-to-t from-black/80 to-transparent">
+                        <h2 className="text-3xl font-bold text-white mb-1">
+                          {member.name}
+                        </h2>
+                        <p className="text-xl font-medium text-white">
+                          {member.role}
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Content section */}
                   <div
@@ -198,6 +228,42 @@ export default function OurTeam() {
               </div>
             </div>
           ))}
+        </section>
+
+        {/* Administrative Team - Side by Side */}
+        <section className="relative my-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {teamMembers.filter(member => member.name === "Kristy Mahon" || member.name === "Gerri Aquino").map((member, index) => (
+              <div key={index} className="relative">
+                <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden">
+                  <div className="p-8 md:p-12 space-y-6">
+                    <div className="flex items-center space-x-4">
+                      <div
+                        className={`p-3 rounded-full bg-gradient-to-br ${member.color} text-white`}
+                      >
+                        <member.icon className="text-2xl" />
+                      </div>
+                      <span className="text-lg font-medium text-rose-800">
+                        {member.role}
+                      </span>
+                    </div>
+
+                    <div className="text-center">
+                      <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                        {member.name}
+                      </h2>
+                      <p className="text-lg text-gray-600 mb-4">
+                        {member.role}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {member.bio}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Team Values - Interactive Card */}
