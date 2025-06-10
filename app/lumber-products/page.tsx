@@ -61,7 +61,7 @@ export default function LumberProducts() {
   // Lumber products by category
   const lumberProducts = [
     {
-      title: "Canadian SPF",
+      title: "Eastern Spruce Pine Fir (SPF)",
       description: [
         "Dimensions: 2x4-2x12 16' and Shorter (Including Special Trims)",
         "Grades: Econ - MSR, Including Premium",
@@ -93,10 +93,10 @@ export default function LumberProducts() {
       ],
     },
     {
-      title: "Import Euro SPF",
+      title: "European SPF",
       description: [
         "Dimensions: 2x4-2x12 8'-20'",
-        "Grades: 2x4 & 2x6",
+        "Grades: #2 & Premium",
         "Use: Construction and industrial uses"
       ],
       icon: FaShip,
@@ -124,22 +124,7 @@ export default function LumberProducts() {
         "Excellent paintability and stainability",
       ],
     },
-    {
-      title: "KD Hem Fir / White Fir",
-      description: [
-        "Dimensions: 2x4-2x12 8'-26'",
-        "Grades: Stud - Select Structural including Premium",
-        "Use: Construction applications"
-      ],
-      icon: FaIndustry,
-      mill: "Delco Forest Products",
-      features: [
-        "Excellent dimensional stability",
-        "Consistent moisture content",
-        "Good nail and screw holding",
-        "Suitable for various construction applications",
-      ],
-    },
+
     {
       title: "Posts & Timbers",
       description: [

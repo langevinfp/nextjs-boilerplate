@@ -39,7 +39,7 @@ export default function OurTeam() {
       name: "Chris Langevin",
       role: "President",
       image: "/chris.png",
-      bio: "Chris grew up in the family business, learning the ropes early on. After getting his Bachelor's in Organizational Psychology, he joined LFP Inc. in 1994 and has been a key player ever since. He's a family guy through and through, married to his wife, Lisa, with two kids in college. When he's not working, you'll find him fishing with his son, Jake, or soaking up family time on vacation.",
+      bio: "Chris grew up in the family business, learning the ropes early on. After earning his Bachelor's in Organizational Psychology, he joined LFP Inc. in 1994 and has been a key player ever since. He's a family guy through and through, married to his wife, Lisa, with two kids—Jake and Maddi. When he's not working, you'll find him fishing with Jake, enjoying family vacations, or staying active in local hockey organizations.",
       icon: FaSeedling,
       specialty: "Operations & Customer Relations",
       color: "from-amber-700 to-amber-900",

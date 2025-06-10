@@ -65,7 +65,7 @@ const ImageCarousel = () => {
 export default function Home() {
   const lumberProducts = [
     {
-      title: "Canadian SPF",
+      title: "Eastern Spruce Pine Fir (SPF)",
       description: [
         "Dimensions: 2x4-2x12 16' and Shorter (Including Special Trims)",
         "Grades: Econ - MSR, Including Premium",
@@ -81,10 +81,10 @@ export default function Home() {
       ],
     },
     {
-      title: "Import Euro SPF",
+      title: "European SPF",
       description: [
         "Dimensions: 2x4-2x12 8'-20'",
-        "Grades: 2x4 & 2x6",
+        "Grades: #2 & Premium",
         "Use: Construction and industrial uses"
       ],
     },
@@ -96,14 +96,7 @@ export default function Home() {
         "Use: Trim, shelving, and craft projects"
       ],
     },
-    {
-      title: "KD Hem Fir / White Fir",
-      description: [
-        "Dimensions: 2x4-2x12 8'-26'",
-        "Grades: Stud - Select Structural including Premium",
-        "Use: Construction applications"
-      ],
-    },
+
     {
       title: "Posts & Timbers",
       description: [
@@ -308,14 +301,7 @@ export default function Home() {
             {/* Optional divider */}
             <hr className="border-t-2 border-dashed border-rose-800/30 w-1/4 mx-auto" />
             <p className="text-xl text-rose-900 leading-relaxed">
-              Christopher Langevin joined the company in 1994 after graduating
-              from Worcester State University. Under his influence, the company
-              expanded its profile from strictly wholesale to include mill
-              representation. Today, we hold exclusivity with Delco Forest
-              Products (New Brunswick) and manage US sales for Group Crete
-              (Quebec). We collaborate with various mills across Eastern and
-              Western species, utilizing reload locations throughout Canada and
-              the Eastern US.
+              Christopher Langevin joined the company in 1994 after graduating from Worcester State University. Under his influence, the company expanded its profile from strictly wholesale to include mill representation. Today, we hold exclusivity with Delco Forest Products (New Brunswick) and manage a contractual portion of Group Crete's US sales (Quebec). We collaborate with various mills across Eastern and Western species, utilizing reload locations throughout Canada and the Eastern US.
             </p>
             {/* Meet the Team Link */}
             <div className="mt-12">
