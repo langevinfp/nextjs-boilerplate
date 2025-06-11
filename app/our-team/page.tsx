@@ -45,7 +45,7 @@ export default function OurTeam() {
       color: "from-amber-700 to-amber-900",
     },
     {
-      name: "Lylee",
+      name: "Lylee Nebeker",
       role: "Sales Representative",
       image: "/lylee.png",
       bio: "Lylee jumped into the lumber world three years ago and joined LFP Inc. in August 2024. Working remotely from Portland, Oregon, she's quickly become a valued part of the Langevin crew. In her downtime, she's out hiking the trails or wandering the Oregon coast, soaking in the beauty of the Pacific Northwest.",
