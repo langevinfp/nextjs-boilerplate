@@ -73,6 +73,23 @@ export default function ContactUs() {
                 </h2>
 
                 <div className="space-y-6">
+                  {/* Address */}
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 mt-1">
+                      <FaMapMarkerAlt className="h-6 w-6 text-rose-800" />
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="text-lg font-medium text-stone-800">
+                        Address
+                      </h3>
+                      <p className="mt-1 text-stone-600 leading-relaxed">
+                        P.O. Box 428
+                        <br />
+                        Sterling, MA 01564
+                      </p>
+                    </div>
+                  </div>
+
                   {/* Phone */}
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
