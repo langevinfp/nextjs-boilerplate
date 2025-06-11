@@ -212,16 +212,7 @@ export default function OurTeam() {
                       <p className="text-lg leading-relaxed text-gray-700 mb-4">
                         {member.bio}
                       </p>
-                      {member.name === "Chris Langevin" && (
-                        <p className="text-sm text-rose-700">
-                          sales@langevinfp.com | 978-422-3939
-                        </p>
-                      )}
-                      {member.name === "Lylee" && (
-                        <p className="text-sm text-rose-700">
-                          lylee@langevinfp.com | 801-391-5408
-                        </p>
-                      )}
+
                     </div>
                   </div>
                 </div>
@@ -256,7 +247,7 @@ export default function OurTeam() {
                         {member.role}
                       </p>
                       <p className="text-sm text-gray-600">
-                        {member.bio}
+                        {member.name === "Kristy Mahon" ? "Accounts Payable Specialist at LFP Inc." : "Accounts Receivable Specialist at LFP Inc."}
                       </p>
                     </div>
                   </div>

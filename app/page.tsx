@@ -162,8 +162,7 @@ export default function Home() {
               Our Lumber Products
             </h2>
             <p className="text-xl text-rose-900 max-w-3xl mx-auto">
-              Premium quality lumber sourced from sustainable forests, carefully
-              selected and graded for your construction projects
+              Premium-grade lumber in truckload and carload quantities—built for commercial yards, contractors, and industrial buyers.
             </p>
           </div>
 

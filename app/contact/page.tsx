@@ -73,23 +73,6 @@ export default function ContactUs() {
                 </h2>
 
                 <div className="space-y-6">
-                  {/* Address */}
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <FaMapMarkerAlt className="h-6 w-6 text-rose-800" />
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="text-lg font-medium text-stone-800">
-                        Address
-                      </h3>
-                      <p className="mt-1 text-stone-600 leading-relaxed">
-                        P.O. Box 428
-                        <br />
-                        Sterling, MA 01564
-                      </p>
-                    </div>
-                  </div>
-
                   {/* Phone */}
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
@@ -124,7 +107,7 @@ export default function ContactUs() {
                           href="mailto:sales@langevinfp.com"
                           className="text-stone-600 hover:text-rose-800 transition-colors"
                         >
-                          sales@langevinfp.com
+                          contact@langevinfp.com
                         </a>
                       </p>
                     </div>
@@ -274,29 +257,6 @@ export default function ContactUs() {
                 </form>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-12 bg-stone-50 border-t border-stone-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-rose-900 mb-8 text-center">
-            Our Location
-          </h2>
-          <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-md">
-            {/* Google Maps embed using the physical location for directions */}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.0736618639193!2d-71.7889572!3d42.4208897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3f4a8c9c9b8c3%3A0x9f5a5c5c5c5c5c5c!2s50%20Leominster%20Rd%2C%20Sterling%2C%20MA%2001564!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen={true}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Langevin Forest Products Location"
-              className="w-full h-96"
-            ></iframe>
           </div>
         </div>
       </section>
