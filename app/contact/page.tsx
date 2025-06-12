@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaExclamationTriangle } from "react-icons/fa";
 
 export default function ContactUs() {
   // State for form inputs
@@ -53,6 +53,15 @@ export default function ContactUs() {
       {/* Main Content */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Important Note */}
+          <div className="col-span-3 mb-12">
+            <div className="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-lg">
+              <p className="text-lg font-semibold text-amber-800">
+                Kindly Note: We supply lumber by the truckload or carload only—no single-unit or retail orders.
+              </p>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}
             <div className="lg:col-span-1">
@@ -270,6 +279,13 @@ export default function ContactUs() {
                     >
                       Send Message
                     </button>
+                  </div>
+
+                  {/* Important Note */}
+                  <div className="mt-6 p-4 bg-stone-50 rounded-lg border border-stone-200">
+                    <p className="text-sm text-stone-700">
+                      Kindly note that we supply lumber by the truckload only—no single-unit or retail orders.
+                    </p>
                   </div>
                 </form>
               </div>
