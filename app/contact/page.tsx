@@ -53,18 +53,9 @@ export default function ContactUs() {
       {/* Main Content */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Important Note */}
-          <div className="col-span-3 mb-12">
-            <div className="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-lg">
-              <p className="text-lg font-semibold text-amber-800">
-                Kindly Note: We supply lumber by the truckload or carload only—no single-unit or retail orders.
-              </p>
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 order-2 lg:order-1">
               <div className="bg-stone-50 p-8 rounded-lg shadow-sm border border-stone-200 h-full">
                 {/* Logo */}
                 <Link href="/" className="inline-block mb-6">
@@ -185,7 +176,7 @@ export default function ContactUs() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 order-1 lg:order-2">
               <div className="bg-white p-8 rounded-lg shadow-sm border border-stone-200">
                 <h2 className="text-2xl font-semibold text-rose-900 mb-6">
                   Send Us a Message
@@ -194,6 +185,11 @@ export default function ContactUs() {
                   Please fill out the form below and we'll get back to you as soon as
                   possible.
                 </p>
+                <div className="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-lg mb-8">
+                  <p className="text-lg font-semibold text-amber-800">
+                    Kindly Note: We supply lumber by the truckload or carload only—no single-unit or retail orders.
+                  </p>
+                </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name and Email Grid */}
@@ -279,13 +275,6 @@ export default function ContactUs() {
                     >
                       Send Message
                     </button>
-                  </div>
-
-                  {/* Important Note */}
-                  <div className="mt-6 p-4 bg-stone-50 rounded-lg border border-stone-200">
-                    <p className="text-sm text-stone-700">
-                      Kindly note that we supply lumber by the truckload only—no single-unit or retail orders.
-                    </p>
                   </div>
                 </form>
               </div>
