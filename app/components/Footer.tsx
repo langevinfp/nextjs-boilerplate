@@ -15,7 +15,6 @@ export default function Footer() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // TODO: Implement actual form submission logic here
-    console.log("Form submitted (placeholder):", { name, email, message });
     alert("Thank you for your message! (Placeholder message)");
     setName(""); // Clear form after submission
     setEmail("");

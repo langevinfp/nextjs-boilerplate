@@ -3,7 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaExclamationTriangle } from "react-icons/fa";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaClock,
+  FaExclamationTriangle,
+} from "react-icons/fa";
 
 export default function ContactUs() {
   // State for form inputs
@@ -13,16 +19,45 @@ export default function ContactUs() {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
-  // Placeholder submit handler
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  // Form submission state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  // Submit handler
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: Implement actual form submission logic here
-    console.log("Form submitted:", { name, email, phone, message });
-    alert("Thank you for your message! We'll get back to you soon.");
-    setName(""); // Clear form after submission
-    setEmail("");
-    setPhone("");
-    setMessage("");
+    setIsSubmitting(true);
+    setSubmitError("");
+    setSubmitSuccess(false);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, phone, message }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setSubmitSuccess(true);
+      // Clear form after successful submission
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+    } catch (error) {
+      setSubmitError(
+        error.message || "Something went wrong. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // SVG background pattern Data URI
@@ -182,12 +217,13 @@ export default function ContactUs() {
                   Send Us a Message
                 </h2>
                 <p className="text-stone-600 mb-8">
-                  Please fill out the form below and we'll get back to you as soon as
-                  possible.
+                  Please fill out the form below and we'll get back to you as
+                  soon as possible.
                 </p>
                 <div className="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-lg mb-8">
                   <p className="text-lg font-semibold text-amber-800">
-                    Kindly Note: We supply lumber by the truckload or carload only—no single-unit or retail orders.
+                    Kindly Note: We supply lumber by the truckload or carload
+                    only—no single-unit or retail orders.
                   </p>
                 </div>
 
@@ -267,13 +303,34 @@ export default function ContactUs() {
                     ></textarea>
                   </div>
 
+                  {/* Error Message */}
+                  {submitError && (
+                    <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md">
+                      <p className="font-medium">Error: {submitError}</p>
+                    </div>
+                  )}
+
+                  {/* Success Message */}
+                  {submitSuccess && (
+                    <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-md">
+                      <p className="font-medium">
+                        Thank you for your message! We'll get back to you soon.
+                      </p>
+                    </div>
+                  )}
+
                   {/* Submit Button */}
                   <div>
                     <button
                       type="submit"
-                      className="w-full md:w-auto bg-rose-800 text-white px-8 py-3 rounded-md text-base font-semibold hover:bg-rose-900 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-rose-700"
+                      disabled={isSubmitting}
+                      className={`w-full md:w-auto px-8 py-3 rounded-md text-base font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-rose-700 ${
+                        isSubmitting
+                          ? "bg-stone-400 text-white cursor-not-allowed"
+                          : "bg-rose-800 text-white hover:bg-rose-900"
+                      }`}
                     >
-                      Send Message
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
                   </div>
                 </form>
