@@ -60,7 +60,7 @@ export default function AboutUs() {
       icon: FaSeedling,
       title: "Market Expertise",
       description:
-        "Leveraging deep industry knowledge to connect the right products with the right needs.",
+        "With 40+ years in the industry, we exceed customer needs through market expertise.",
     },
   ];
 
@@ -139,12 +139,12 @@ export default function AboutUs() {
             <p className="leading-relaxed">
               Our strength lies in fostering strong relationships. We are proud
               to hold exclusive sales representation for{" "}
-              <span className="font-semibold text-rose-800">
+              <span className="text-rose-800">
                 Delco Forest Products
               </span>
               . Additionally, we maintain key partnerships with{" "}
-              <span className="font-semibold text-rose-800">Group Crete</span>{" "}
-              and <span className="font-semibold text-rose-800">Lulumco</span>,
+              <span className="text-rose-800">Group Crete</span>{" "}
+              and <span className="text-rose-800">Lulumco</span>,
               and collaborate with a wide variety of mills specializing in
               Eastern species. This network allows us to offer a comprehensive
               range of products and ensure reliable supply for our clients.
