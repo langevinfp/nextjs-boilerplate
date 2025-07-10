@@ -44,15 +44,7 @@ export default function OurTeam() {
       specialty: "Operations & Customer Relations",
       color: "from-amber-700 to-amber-900",
     },
-    {
-      name: "Lylee Nebeker",
-      role: "Sales Representative",
-      image: "/lylee.png",
-      bio: "Lylee jumped into the lumber world three years ago and joined LFP Inc. in August 2024. Working remotely from Portland, Oregon, she's quickly become a valued part of the Langevin crew. In her downtime, she's out hiking the trails or wandering the Oregon coast, soaking in the beauty of the Pacific Northwest.",
-      icon: FaLeaf,
-      specialty: "Sales & Client Development",
-      color: "from-rose-700 to-rose-900",
-    },
+
     {
       name: "Kristy Mahon",
       role: "Accounts Payable",
@@ -60,7 +52,7 @@ export default function OurTeam() {
       bio: "Work: (978) 422-3939\nEmail: admin@langevinfp.com",
       icon: FaEnvelope,
       specialty: "Finance",
-      color: "from-blue-700 to-blue-900",
+      color: "from-rose-700 to-rose-900",
     },
     {
       name: "Gerri Aquino",
@@ -69,7 +61,7 @@ export default function OurTeam() {
       bio: "Work: (978) 422-3939\nEmail: admin2@langevinfp.com",
       icon: FaEnvelope,
       specialty: "Finance",
-      color: "from-blue-700 to-blue-900",
+      color: "from-rose-700 to-rose-900",
     },
   ];
 
@@ -221,13 +213,18 @@ export default function OurTeam() {
           ))}
         </section>
 
-        {/* Administrative Team - Side by Side */}
+        {/* Administrative Team - Connected Box */}
         <section className="relative my-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {teamMembers.filter(member => member.name === "Kristy Mahon" || member.name === "Gerri Aquino").map((member, index) => (
-              <div key={index} className="relative">
-                <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden">
-                  <div className="p-8 md:p-12 space-y-6">
+          {/* Background accent */}
+          <div className="absolute inset-0 bg-gradient-to-r from-rose-700 to-rose-900 rounded-2xl transform rotate-2 scale-105 opacity-10">
+            {/* Add angled lines pattern */}
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L100 100 M0 100 L100 0' fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='1'/%3E%3C/svg%3E')]" />
+          </div>
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {teamMembers.filter(member => member.name === "Kristy Mahon" || member.name === "Gerri Aquino").map((member, index) => (
+                <div key={index} className="relative">
+                  <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center border border-rose-100">
                     <div className="flex items-center space-x-4">
                       <div
                         className={`p-3 rounded-full bg-gradient-to-br ${member.color} text-white`}
@@ -247,13 +244,14 @@ export default function OurTeam() {
                         {member.role}
                       </p>
                       <p className="text-sm text-gray-600">
-                        {member.name === "Kristy Mahon" ? "Accounts Payable Specialist at LFP Inc." : "Accounts Receivable Specialist at LFP Inc."}
+                        {member.name === "Kristy Mahon" ? "Email: admin@langevinfp.com" : "Email: admin2@langevinfp.com"}
                       </p>
                     </div>
                   </div>
+
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
