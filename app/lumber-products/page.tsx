@@ -171,7 +171,7 @@ export default function LumberProducts() {
           </div>
 
           <p className="text-lg md:text-xl text-amber-100/90 font-light max-w-3xl mx-auto leading-relaxed">
-            Premium lumber sourced from trusted mills, carefully selected and graded for your construction projects
+            We offer a comprehensive range of high-quality lumber products to meet diverse construction and manufacturing needs.
           </p>
         </div>
       </div>
@@ -179,15 +179,7 @@ export default function LumberProducts() {
       {/* Products Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-rose-900 mb-8 text-center font-serif">
-            Our Lumber Products
-          </h2>
-          <p className="text-lg text-rose-800/80 max-w-3xl mx-auto text-center mb-12">
-            We offer a comprehensive range of high-quality lumber products to
-            meet diverse construction and manufacturing needs.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             {lumberProducts.map((product, index) => (
               <div
                 key={index}

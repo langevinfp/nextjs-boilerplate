@@ -125,25 +125,6 @@ export default function ContactUs() {
                     </div>
                   </div>
 
-                  {/* Phone */}
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <FaPhone className="h-6 w-6 text-rose-800" />
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="text-lg font-medium text-stone-800">
-                        Phone
-                      </h3>
-                      <p className="mt-1">
-                        <a
-                          href="tel:978-422-3939"
-                          className="text-stone-600 hover:text-rose-800 transition-colors"
-                        >
-                          (978) 422-3939
-                        </a>
-                      </p>
-                    </div>
-                  </div>
 
                   {/* Email */}
                   <div className="flex items-start">
@@ -222,8 +203,7 @@ export default function ContactUs() {
                 </p>
                 <div className="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-lg mb-8">
                   <p className="text-lg font-semibold text-amber-800">
-                    Kindly Note: We supply lumber by the truckload or carload
-                    only—no single-unit or retail orders.
+                    Kindly Note: We supply lumber by the truckload or carload only
                   </p>
                 </div>
 

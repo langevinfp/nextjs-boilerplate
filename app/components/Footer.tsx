@@ -61,14 +61,6 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="tel:978-422-3939"
-                  className="text-stone-600 hover:text-rose-800 transition-colors"
-                >
-                  (978) 422-3939
-                </a>
-              </p>
-              <p>
-                <a
                   href="mailto:info@langevinforest.com"
                   className="text-stone-600 hover:text-rose-800 transition-colors"
                 >
