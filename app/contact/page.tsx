@@ -53,7 +53,7 @@ export default function ContactUs() {
       setMessage("");
     } catch (error) {
       setSubmitError(
-        error.message || "Something went wrong. Please try again.",
+        "Something went wrong. Please try again."
       );
     } finally {
       setIsSubmitting(false);
