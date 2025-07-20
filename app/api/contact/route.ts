@@ -88,9 +88,7 @@ This email was sent from the contact form on Langevin Forest Products website.
   } catch (error) {
     return NextResponse.json(
       {
-        error: "Failed to send email",
-        details: error?.message || "Unknown error",
-        code: error?.code,
+        error: "Failed to send email"
       },
       { status: 500 },
     );
